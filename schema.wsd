@@ -1,0 +1,35 @@
+@startuml schema
+entity "Movies" as movie {
+ movie_id: number
+ --
+ title: varchar2(128)
+}
+
+entity "MovieGenres" as m_genres {
+ genre_id: number
+ movie_id: number
+ provider_id: number
+}
+
+entity "Genres" as genres {
+ genre_id: number
+ --
+ genre: varchar2(128)
+}
+
+entity "Providers" as providers {
+ provider_id: number
+ --
+ provider: varchar2(128)
+}
+
+entity "Ratings" as ratings {
+ provider_id: number
+ movie_id: number
+ --
+ total_rating: number
+ performance_rating: number
+ screenplay_rating: number
+ soundtrack_rating: number
+}
+@enduml
