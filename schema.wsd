@@ -1,8 +1,15 @@
 @startuml schema
 entity "Movies" as movie {
  movie_id: number
+}
+
+entity "MovieTitles" as m_titles {
+ title_id: number
+ movie_id: number
+ provider_id: number
  --
  title: varchar2(128)
+ title_rating: number
 }
 
 entity "MovieGenres" as m_genres {
@@ -15,6 +22,7 @@ entity "Genres" as genres {
  genre_id: number
  --
  genre: varchar2(128)
+ genre_rating: number
 }
 
 entity "Providers" as providers {
